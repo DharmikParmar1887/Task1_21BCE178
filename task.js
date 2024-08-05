@@ -100,19 +100,6 @@ function filterTable() {
     loadTableData(filteredData);
 }
 
-document.getElementById('searchBar').addEventListener('input', function () {
-    const query = this.value.toLowerCase();
-    const filteredData = mockData.filter(item => {
-        return (
-            item.id.toString().includes(query) ||
-            item.name.toLowerCase().includes(query) ||
-            item.status.toLowerCase().includes(query) ||
-            item.date.toLowerCase().includes(query) ||
-            item.active.toString().includes(query)
-        );
-    });
-    loadTableData(filteredData);
-});
 
 
 
