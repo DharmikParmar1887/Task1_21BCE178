@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+
+    <input type="text" id="searchBar" placeholder="Search...">
+    
+    <table id="dataTable">
+        <thead>
+            <tr>
+                <th data-type="integer" onclick="sortTable(0)">ID</th>
+                <th data-type="string" onclick="sortTable(1)">Name</th>
+                <th data-type="enum" onclick="sortTable(2)">Status</th>
+                <th data-type="date" onclick="sortTable(3)">Date</th>
+                <th data-type="boolean" onclick="sortTable(4)">Active</th>
+            </tr>
+            <tr>
+                <th>
+                    <select id="intFilter">
+                        <option value="">Select</option>
+                        <option value="equals">Equals</option>
+                        <option value="lt">Less than</option>
+                        <option value="lte">Less than or equal</option>
+                        <option value="gt">Greater than</option>
+                        <option value="gte">Greater than or equal</option>
+                        <option value="range">Range</option>
+                        <option value="neq">Not equal</option>
+                    </select>
+                    <input type="text" id="intValue" placeholder="Enter ID">
+                    <button onclick="applyIdFilter()">Apply</button>
+                </th>
+                <th><input type="text" id="stringFilter" oninput="filterTable()"></th>
+                <th>
+                    <select id="enumFilter" onchange="filterTable()">
+                        <option value="">Select</option>
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                        <option value="Pending">Pending</option>
+                    </select>
+                </th>
+                <th><input type="date" id="dateFilter" onchange="filterTable()"></th>
+                <th>
+                    <select id="booleanFilter" onchange="filterTable()">
+                        <option value="">Select</option>
+                        <option value="true">True</option>
+                        <option value="false">False</option>
+                    </select>
+                </th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+        </tbody>
+    </table>
+
+    <script src="task.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
